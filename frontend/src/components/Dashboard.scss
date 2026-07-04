@@ -1,0 +1,49 @@
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  border-style: solid;
+  border-color: darkorange;
+  border-width: 2px;
+  border-radius: 8px;
+
+  box-shadow: 0px 0px 32px 4px black;
+
+  width: 90vw;
+  max-width: 1000px;
+
+  overflow: hidden;
+}
+
+.welcome-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background-color: white;
+}
+
+.cal-sched-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background-color: white;
+
+  width: 100%;
+}
+
+.side-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background-color: white;
+
+  width: 100%;
+}
