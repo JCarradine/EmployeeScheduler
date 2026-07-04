@@ -1,12 +1,12 @@
 import "./App.scss";
-import Calendar from "./components/Calendar.tsx";
+import Requests from "./components/Requests.tsx";
 
 function App() {
-  return (
-    <div className="main">
-      <Calendar />
-    </div>
-  );
+	return (
+		<div className="main">
+			<Requests />
+		</div>
+	);
 }
 
 export default App;

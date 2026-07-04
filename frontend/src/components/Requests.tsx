@@ -1,5 +1,37 @@
+import "./Card.scss";
+
 function Requests() {
-  return <div>hello</div>;
+	return (
+		<div className="card">
+			{/*Avaiability Card Header*/}
+			<div className="card-header">
+				<div className="title">Requests</div>
+				<button className="edit-button">+</button>
+			</div>
+
+			{/*Avaiability Card List*/}
+			<div className="card-main">
+				<ul className="list">
+					<li className="list-item">
+						<div>Monday</div>
+						<div>01/11/2011</div>
+					</li>
+					<li className="list-item">
+						<div>Monday</div>
+						<div>01/11/2011</div>
+					</li>
+					<li className="list-item">
+						<div>Monday</div>
+						<div>01/11/2011</div>
+					</li>
+					<li className="list-item">
+						<div>Monday</div>
+						<div>01/11/2011</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	);
 }
 
 export default Requests;

@@ -1,0 +1,76 @@
+.card {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	background-color: white;
+
+	border-style: solid;
+	border-color: darkgrey;
+	border-width: 2px;
+	border-radius: 8px;
+
+	width: 90vw;
+
+	overflow: hidden;
+}
+
+.card-header,
+.card-main {
+	font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+	font-size: 1.5rem;
+
+	padding: 0.5rem;
+}
+
+.card-header {
+	display: flex;
+	justify-content: space-between;
+
+	border-style: solid;
+	border-color: darkgrey;
+	border-width: 0px 0px 2px 0px;
+
+	.title {
+		font-size: 2rem;
+
+		padding: 4px;
+	}
+
+	.edit-button {
+		font-size: 2rem;
+
+		border-style: solid;
+		border-color: darkgrey;
+		border-width: 2px;
+		border-radius: 8px;
+
+		padding: 4px;
+
+		width: 3rem;
+
+		background-color: white;
+		color: grey;
+	}
+}
+
+.card-main {
+	.list {
+		list-style-type: none;
+
+		margin: 0px;
+		padding: 0px;
+
+		.list-item {
+			display: flex;
+			justify-content: space-between;
+			padding: 4px;
+		}
+
+		.list-item:nth-child(even) {
+			border-style: solid;
+			border-color: lightgrey;
+			border-width: 2px 0px;
+		}
+	}
+}
