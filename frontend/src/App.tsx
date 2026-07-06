@@ -1,10 +1,10 @@
 import "./App.scss";
-import Requests from "./components/Requests.tsx";
+import Schedule from "./components/pages/dashboard/Schedule.tsx";
 
 function App() {
 	return (
 		<div className="main">
-			<Requests />
+			<Schedule />
 		</div>
 	);
 }
