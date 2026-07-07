@@ -1,0 +1,78 @@
+.calendar-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+
+  border-style: solid;
+  border-color: darkgrey;
+  border-width: 2px;
+  border-radius: 8px;
+
+  background-color: darkgrey;
+
+  width: 90vw;
+  overflow: hidden;
+}
+
+.month-display,
+.day-display,
+.week-display {
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+  font-size: 1.5rem;
+
+  padding: 0.5rem;
+
+  width: 100%;
+}
+
+.month-display {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: white;
+
+  .month {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 3rem;
+  }
+
+  .nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+    width: 25%;
+
+    button {
+      color: darkgrey;
+      background-color: white;
+
+      border-width: 0px;
+
+      font-size: 3rem;
+
+      padding: 0;
+    }
+  }
+}
+
+.day-display {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: darkgrey;
+}
+
+.week-display {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+
+  background-color: white;
+}

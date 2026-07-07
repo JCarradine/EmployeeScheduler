@@ -1,0 +1,42 @@
+.dashboard-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	width: 100%;
+	max-width: 1000px;
+
+	overflow: hidden;
+}
+
+.welcome-card {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	background-color: white;
+}
+
+.cal-sched-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	background-color: white;
+
+	width: 100%;
+}
+
+.side-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	background-color: white;
+
+	width: 100%;
+}

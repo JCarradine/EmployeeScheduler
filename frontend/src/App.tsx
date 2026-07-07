@@ -1,12 +1,12 @@
 import "./App.scss";
-import Login from "./components/Login.tsx";
+import Banner from "./components/pages/dashboard/Banner.tsx";
 
 function App() {
-  return (
-    <div className="main">
-      <Login />
-    </div>
-  );
+	return (
+		<div className="main">
+			<Banner />
+		</div>
+	);
 }
 
 export default App;
