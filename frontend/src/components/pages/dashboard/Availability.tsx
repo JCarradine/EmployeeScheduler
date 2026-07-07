@@ -1,12 +1,12 @@
-import "../util/Card.scss";
+import "../../util/Card.scss";
 
 function Availability() {
 	return (
 		<div className="card">
 			{/*Avaiability Card Header*/}
 			<div className="card-header">
-				<div className="title">Availability</div>
-				<button className="edit-button">&#9998;</button>
+				<div className="card-title">Availability</div>
+				<button className="card-button">&#9998;</button>
 			</div>
 
 			{/*Avaiability Card List*/}

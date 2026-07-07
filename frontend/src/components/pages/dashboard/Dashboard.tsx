@@ -1,14 +1,16 @@
 import "./Dashboard.scss";
-import Schedule from "../Schedule.tsx";
-import Requests from "../Requests.tsx";
-("./Requests.tsx");
-import Availability from "../Availability.tsx";
+import Banner from "./Banner.tsx";
+import Schedule from "./Schedule.tsx";
+import Requests from "./Requests.tsx";
+import Availability from "./Availability.tsx";
 
 function Dashboard() {
 	return (
 		<div className="dashboard-container">
 			{/*welcome header*/}
-			<header className="welcome-card">Hello JohnFirst DoeLast!</header>
+			<header className="banner-container">
+				<Banner />
+			</header>
 
 			{/*schedule*/}
 			<main className="sched-container">

@@ -1,12 +1,12 @@
-import "../util/Card.scss";
+import "../../util/Card.scss";
 
 function Requests() {
 	return (
 		<div className="card">
 			{/*Avaiability Card Header*/}
 			<div className="card-header">
-				<div className="title">Requests</div>
-				<button className="edit-button">+</button>
+				<div className="card-title">Requests</div>
+				<button className="card-button">+</button>
 			</div>
 
 			{/*Avaiability Card List*/}

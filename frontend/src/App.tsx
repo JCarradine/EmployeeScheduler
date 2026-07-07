@@ -1,10 +1,10 @@
 import "./App.scss";
-import Schedule from "./components/pages/dashboard/Schedule.tsx";
+import Banner from "./components/pages/dashboard/Banner.tsx";
 
 function App() {
 	return (
 		<div className="main">
-			<Schedule />
+			<Banner />
 		</div>
 	);
 }

@@ -1,0 +1,39 @@
+.banner-card {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	border-style: solid;
+	border-color: darkgrey;
+	border-width: 2px;
+	border-radius: 8px;
+
+	background-color: white;
+
+	padding: 0.5rem;
+
+	width: 100%;
+
+	.banner-title {
+		font-size: 2rem;
+		font-weight: bold;
+
+		padding: 0.5rem;
+	}
+
+	.banner-button {
+		font-size: 2rem;
+
+		border-style: solid;
+		border-color: darkgrey;
+		border-width: 2px;
+		border-radius: 8px;
+
+		padding: 0.5rem;
+
+		width: 3rem;
+
+		background-color: white;
+		color: grey;
+	}
+}
