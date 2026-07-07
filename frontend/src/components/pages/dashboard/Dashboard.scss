@@ -1,42 +1,27 @@
 .dashboard-container {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: start;
 	align-items: center;
 
-	width: 100%;
+	width: 100vw;
 	max-width: 1000px;
 
-	overflow: hidden;
+	padding: 0px;
+
+	overflow-x: hidden;
+	overflow-y: scroll;
 }
 
-.welcome-card {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-
-	background-color: white;
-}
-
-.cal-sched-container {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-
-	background-color: white;
-
-	width: 100%;
-}
-
+.banner-container,
+.schedule-container,
 .side-container {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 
-	background-color: white;
+	padding: 0.5rem;
 
 	width: 100%;
 }

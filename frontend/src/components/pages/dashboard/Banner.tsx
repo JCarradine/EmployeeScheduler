@@ -6,7 +6,7 @@ function Banner() {
 		<div className="banner-card">
 			<div className="banner-title">Hello John Doe!</div>
 			<button className="banner-button">
-				<LogOut color="grey" />
+				<LogOut />
 			</button>
 		</div>
 	);

@@ -9,7 +9,7 @@
 
 	background-color: white;
 
-	width: 90vw;
+	width: 100%;
 
 	margin: 0px;
 	padding: 0px;
@@ -17,10 +17,11 @@
 	overflow: scroll;
 }
 
-div,
-button,
-details,
-summary {
+.sched-column-header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
 	border-style: solid;
 	border-color: darkgrey;
 	border-width: 1px;
@@ -28,12 +29,6 @@ summary {
 	text-align: center;
 	padding: 0.25rem;
 	width: 100%;
-}
-
-.sched-column-header {
-	display: flex;
-	justify-content: center;
-	align-items: center;
 }
 
 .section-header,
@@ -45,11 +40,15 @@ summary {
 	display: flex;
 	align-items: center;
 
+	border-style: solid;
+	border-color: darkgrey;
+	border-width: 1px;
+
 	background-color: lightgrey;
 
-	width: 100%;
-
 	padding: 0.25rem 0.5rem;
+
+	width: 100%;
 
 	div {
 		width: 100%;
@@ -85,12 +84,34 @@ summary {
 
 .section-item {
 	display: contents;
+
+	.item-name,
+	.item-hours {
+		border-style: solid;
+		border-color: darkgrey;
+		border-width: 1px;
+
+		text-align: center;
+		padding: 0.25rem;
+		width: 100%;
+	}
 }
 
 .work-date,
-.work-shift {
+.item-shift {
 	border-style: none;
 	padding: 0px;
+	width: 100%;
+
+	div {
+		border-style: solid;
+		border-color: darkgrey;
+		border-width: 1px;
+
+		text-align: center;
+		padding: 0.25rem;
+		width: 100%;
+	}
 }
 
 .work-date {
@@ -98,12 +119,8 @@ summary {
 	flex-direction: column;
 }
 
-.work-shift {
+.item-shift {
 	display: flex;
 	justify-content: center;
 	width: 100%;
-
-	div {
-		width: 100%;
-	}
 }
