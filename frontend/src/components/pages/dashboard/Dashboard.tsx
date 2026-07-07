@@ -13,13 +13,16 @@ function Dashboard() {
 			</header>
 
 			{/*schedule*/}
-			<main className="sched-container">
+			<main className="schedule-container">
 				<Schedule />
 			</main>
 
 			{/*availability and requests aside*/}
 			<aside className="side-container">
 				<Availability />
+			</aside>
+
+			<aside className="side-container">
 				<Requests />
 			</aside>
 		</div>

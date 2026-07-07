@@ -1,10 +1,10 @@
 import "./App.scss";
-import Banner from "./components/pages/dashboard/Banner.tsx";
+import Dashboard from "./components/pages/dashboard/Dashboard.tsx";
 
 function App() {
 	return (
 		<div className="main">
-			<Banner />
+			<Dashboard />
 		</div>
 	);
 }

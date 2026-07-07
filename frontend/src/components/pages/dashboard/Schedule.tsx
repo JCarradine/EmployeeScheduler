@@ -39,16 +39,16 @@ function Schedule() {
 			<div className="section-content">
 				{Managers.map((manager) => (
 					<div className="section-item" key={manager}>
-						<div>{manager}</div>
+						<div className="item-name">{manager}</div>
 
 						{Hours.map((hour) => (
-							<div className="work-shift" key={hour}>
+							<div className="item-shift" key={hour}>
 								<div>{hour}</div>
 								<div>8.0</div>
 							</div>
 						))}
 
-						<div>40.0</div>
+						<div className="item-hour">40.0</div>
 					</div>
 				))}
 			</div>
