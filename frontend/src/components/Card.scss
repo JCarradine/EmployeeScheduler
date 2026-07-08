@@ -11,6 +11,7 @@
 	border-radius: 8px;
 
 	width: 100%;
+	max-height: 100%;
 
 	overflow: hidden;
 }
@@ -29,13 +30,13 @@
 	border-width: 0px 0px 2px 0px;
 
 	.card-title {
-		font-size: 2rem;
+		font-size: 1.5rem;
 
 		padding: 4px;
 	}
 
 	.card-button {
-		font-size: 2rem;
+		font-size: 1.5rem;
 
 		border-style: solid;
 		border-color: darkgrey;
@@ -57,6 +58,8 @@
 }
 
 .card-main {
+	max-height: 100%;
+	overflow-y: auto;
 	.list {
 		list-style-type: none;
 

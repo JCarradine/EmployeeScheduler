@@ -17,7 +17,6 @@
 .schedule-card {
 	display: grid;
 	grid-template-columns: repeat(9, 1fr);
-	justify-content: start;
 	align-items: center;
 
 	border-style: solid;
@@ -28,11 +27,12 @@
 	background-color: white;
 
 	width: 100%;
+	max-height: 100%;
 
 	padding: 0px;
 	margin: 0px;
 
-	overflow-x: auto;
+	overflow: auto;
 
 	.sched-column-header {
 		@include grid-item;
@@ -87,6 +87,7 @@
 
 		div:nth-child(1) {
 			background-color: lightgrey;
+			border-radius: 8px;
 			padding: 0.25rem;
 		}
 	}
