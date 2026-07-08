@@ -1,4 +1,4 @@
-import "../../util/Card.scss";
+import "../../Card.scss";
 
 function Requests() {
 	return (
