@@ -1,3 +1,4 @@
+import { Pencil } from "lucide-react";
 import "../../Card.scss";
 
 function Requests() {
@@ -6,7 +7,10 @@ function Requests() {
 			{/*Avaiability Card Header*/}
 			<div className="card-header">
 				<div className="card-title">Requests</div>
-				<button className="card-button">+</button>
+				<button className="card-button">
+					<div className="card-button-label">Edit</div>
+					<Pencil className="card-button-icon" />
+				</button>
 			</div>
 
 			{/*Avaiability Card List*/}

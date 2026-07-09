@@ -1,14 +1,14 @@
+@use "Global" as g;
+
 .card {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 
-	background-color: white;
+	background-color: g.$background;
 
-	border-style: solid;
-	border-color: darkgrey;
-	border-width: 2px;
-	border-radius: 8px;
+	border: g.$border;
+	border-radius: 16px;
 
 	width: 100%;
 	max-height: 100%;
@@ -25,35 +25,41 @@
 	display: flex;
 	justify-content: space-between;
 
-	border-style: solid;
-	border-color: darkgrey;
-	border-width: 0px 0px 2px 0px;
+	border-bottom: g.$border;
 
 	.card-title {
 		font-size: 1.5rem;
+		font-weight: bold;
 
-		padding: 4px;
+		padding: 0.25rem;
 	}
 
 	.card-button {
-		font-size: 1.5rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 0.25rem;
 
-		border-style: solid;
-		border-color: darkgrey;
-		border-width: 2px;
-		border-radius: 8px;
+		border: g.$border;
+		border-radius: 16px;
 
-		padding: 4px;
+		padding: 0.25rem;
 
-		width: 3rem;
+		background-color: g.$background;
 
-		background-color: white;
-		color: grey;
+		.card-button-label,
+		.card-button-icon {
+			font-size: 1.25rem;
+			color: g.$font-secondary-color;
+		}
 	}
 	.card-button:hover {
-		color: white;
-		background-color: orange;
-		border-color: darkorange;
+		background-color: g.$background-accent;
+		border-color: g.$border-accent-color;
+		.card-button-label,
+		.card-button-icon {
+			color: g.$font-accent-color;
+		}
 	}
 }
 
@@ -69,13 +75,10 @@
 		.list-item {
 			display: flex;
 			justify-content: space-between;
-			padding: 4px;
-		}
 
-		.list-item:nth-child(even) {
-			border-style: solid;
-			border-color: lightgrey;
-			border-width: 2px 0px;
+			border-bottom: g.$border-secondary;
+
+			padding: 0.25rem;
 		}
 	}
 }

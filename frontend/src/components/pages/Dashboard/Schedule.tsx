@@ -1,116 +1,12 @@
 import { useState } from "react";
+import { Download, Pencil } from "lucide-react";
+import { EXAMPLE_WORKERS, DAY_NAMES_SHORT, type Workers } from "./Types.ts";
 import "./Schedule.scss";
-import type { Workers } from "./ScheduleTypes.ts";
 
+const startIndex = DAY_NAMES_SHORT.indexOf("Wed");
 const DAY_NAMES: readonly string[] = [
-	"Wed",
-	"Thu",
-	"Fri",
-	"Sat",
-	"Sun",
-	"Mon",
-	"Tue",
-];
-
-const EXAMPLE_WORKERS: Workers[] = [
-	{
-		id: 1,
-		name: "John",
-		shifts: ["8-4", "8-4", "8-4", "8-4", "8-4", "OFF", "OFF"],
-		totalHours: 40,
-		role: "Manager",
-	},
-	{
-		id: 2,
-		name: "Jane",
-		shifts: ["8-4", "8-4", "8-4", "8-4", "8-4", "8-4", "8-4"],
-		totalHours: 56,
-		role: "Manager",
-	},
-	{
-		id: 3,
-		name: "Alice",
-		shifts: ["OFF", "12-8", "12-8", "12-8", "OFF", "8-4", "8-4"],
-		totalHours: 40,
-		role: "Decorator",
-	},
-	{
-		id: 4,
-		name: "Bob",
-		shifts: ["8-4", "8-4", "OFF", "OFF", "8-4", "8-4", "8-4"],
-		totalHours: 40,
-		role: "SalesAssociate",
-	},
-	{
-		id: 5,
-		name: "Charlie",
-		shifts: ["12-8", "12-8", "12-8", "12-8", "12-8", "OFF", "OFF"],
-		totalHours: 40,
-		role: "SalesAssociate",
-	},
-	{
-		id: 6,
-		name: "Diana",
-		shifts: ["8-4", "8-4", "OFF", "12-8", "12-8", "8-4", "OFF"],
-		totalHours: 32,
-		role: "Decorator",
-	},
-	{
-		id: 7,
-		name: "Ethan",
-		shifts: ["OFF", "OFF", "8-4", "8-4", "8-4", "8-4", "8-4"],
-		totalHours: 40,
-		role: "SalesAssociate",
-	},
-	{
-		id: 8,
-		name: "Fiona",
-		shifts: ["8-4", "12-8", "8-4", "OFF", "OFF", "12-8", "8-4"],
-		totalHours: 32,
-		role: "Decorator",
-	},
-	{
-		id: 9,
-		name: "George",
-		shifts: ["12-8", "12-8", "12-8", "12-8", "12-8", "12-8", "OFF"],
-		totalHours: 48,
-		role: "Manager",
-	},
-	{
-		id: 10,
-		name: "Hannah",
-		shifts: ["8-4", "8-4", "8-4", "OFF", "OFF", "8-4", "8-4"],
-		totalHours: 40,
-		role: "SalesAssociate",
-	},
-	{
-		id: 11,
-		name: "Ian",
-		shifts: ["OFF", "8-4", "12-8", "12-8", "8-4", "OFF", "OFF"],
-		totalHours: 24,
-		role: "SalesAssociate",
-	},
-	{
-		id: 12,
-		name: "Julia",
-		shifts: ["12-8", "OFF", "12-8", "12-8", "12-8", "12-8", "OFF"],
-		totalHours: 40,
-		role: "Decorator",
-	},
-	{
-		id: 13,
-		name: "Kevin",
-		shifts: ["8-4", "8-4", "8-4", "8-4", "OFF", "OFF", "8-4"],
-		totalHours: 40,
-		role: "SalesAssociate",
-	},
-	{
-		id: 14,
-		name: "Laura",
-		shifts: ["OFF", "12-8", "12-8", "OFF", "12-8", "12-8", "12-8"],
-		totalHours: 40,
-		role: "Decorator",
-	},
+	...DAY_NAMES_SHORT.slice(startIndex),
+	...DAY_NAMES_SHORT.slice(0, startIndex),
 ];
 
 const MANAGERS: Workers[] = EXAMPLE_WORKERS.filter(
@@ -126,6 +22,8 @@ const SALES_ASSOCIATES: Workers[] = EXAMPLE_WORKERS.filter(
 	(worker) => worker.role === "SalesAssociate",
 );
 
+const USER_ROLE: string = "Manager";
+
 function Schedule() {
 	const [isManagerExpanded, setIsManagerExpanded] = useState(true);
 	const [isDecoratorExpanded, setIsDecoratorExpanded] = useState(true);
@@ -136,6 +34,23 @@ function Schedule() {
 	return (
 		<div className="schedule-card">
 			{/*Schedule Card Header*/}
+			<div className="sched-card-header">
+				<div className="sched-title">Schedule</div>
+				<div className="sched-buttons">
+					{USER_ROLE === "Manager" && (
+						<button className="sched-button">
+							<div className="sched-button-label">Edit</div>
+							<Pencil className="sched-button-icon" />
+						</button>
+					)}
+					<button className="sched-button">
+						<div className="sched-button-label">Download</div>
+						<Download className="sched-button-icon" />
+					</button>
+				</div>
+			</div>
+
+			{/*Schedule Grid Header*/}
 			<div className="sched-column-header">Names</div>
 			{DAY_NAMES.map((day) => (
 				<div className="sched-column-date" key={day}>
@@ -198,7 +113,7 @@ function Schedule() {
 				className="section-header"
 				onClick={() => setIsShiftLeadExpanded(!isShiftLeadExpanded)}
 			>
-				<div>ShiftLeads</div>
+				<div>Shift Leads</div>
 				<div>&#x25BC;</div>
 			</button>
 			{isShiftLeadExpanded &&
@@ -222,7 +137,7 @@ function Schedule() {
 				className="section-header"
 				onClick={() => setIsSalesAssociateExpanded(!isSalesAssociateExpanded)}
 			>
-				<div>SalesAssociates</div>
+				<div>Sales Associates</div>
 				<div>&#x25BC;</div>
 			</button>
 			{isSalesAssociateExpanded &&

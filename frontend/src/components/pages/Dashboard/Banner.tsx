@@ -6,7 +6,8 @@ function Banner() {
 		<div className="banner-card">
 			<div className="banner-title">Hello John Doe!</div>
 			<button className="banner-button">
-				<LogOut />
+				<div className="banner-button-label">Logout</div>
+				<LogOut className="banner-button-icon" />
 			</button>
 		</div>
 	);
