@@ -1,12 +1,14 @@
+@use "../../Global" as g;
+
+$border: 1px solid darkgrey;
+
 @mixin grid-item {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 
-	border-style: solid;
-	border-color: darkgrey;
-	border-width: 1px;
+	border: $border;
 
 	text-align: center;
 	padding: 0.25rem;
@@ -17,22 +19,20 @@
 .schedule-card {
 	display: grid;
 	grid-template-columns: repeat(9, 1fr);
-	justify-content: start;
 	align-items: center;
 
-	border-style: solid;
-	border-color: darkgrey;
-	border-width: 1px;
-	border-radius: 8px;
+	border: $border;
+	border-radius: 16px;
 
-	background-color: white;
+	background-color: g.$background;
 
 	width: 100%;
+	max-height: 100%;
 
 	padding: 0px;
 	margin: 0px;
 
-	overflow-x: auto;
+	overflow: auto;
 
 	.sched-column-header {
 		@include grid-item;
@@ -41,6 +41,59 @@
 	.sched-column-date {
 		div {
 			@include grid-item;
+		}
+	}
+}
+
+.sched-card-header {
+	grid-column: span 9;
+
+	@include grid-item;
+	flex-direction: row;
+	justify-content: space-between;
+
+	padding: 0.5rem;
+	margin: 0px;
+
+	.sched-title {
+		font-size: 1.5rem;
+		font-weight: bold;
+
+		padding: 0.25rem;
+	}
+
+	.sched-buttons {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 0.25rem;
+	}
+
+	.sched-button {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 0.25rem;
+
+		border: g.$border;
+		border-radius: 16px;
+
+		padding: 0.25rem;
+
+		background-color: g.$background;
+
+		.sched-button-label,
+		.sched-button-icon {
+			font-size: 1.25rem;
+			color: g.$font-secondary-color;
+		}
+	}
+	.sched-button:hover {
+		background-color: g.$background-accent;
+		border-color: g.$border-accent-color;
+		.sched-button-label,
+		.sched-button-icon {
+			color: g.$font-accent-color;
 		}
 	}
 }
@@ -56,19 +109,24 @@
 	flex-direction: row;
 	justify-content: space-between;
 
-	background-color: lightgrey;
+	font-size: 1.25rem;
+
+	padding: 0.25rem 0.5rem;
+
+	background-color: g.$background-secondary;
 
 	div:nth-child(2) {
-		color: darkgrey;
+		color: g.$font-secondary-color;
 	}
 }
 .section-header:hover {
-	color: white;
-	background-color: orange;
-	border-color: darkorange;
-
+	background-color: g.$background-accent;
+	border-color: g.$border-accent-color;
+	div:nth-child(1) {
+		color: g.$font-accent-color;
+	}
 	div:nth-child(2) {
-		color: darkorange;
+		color: g.$border-accent-color;
 	}
 }
 
@@ -86,7 +144,8 @@
 		@include grid-item;
 
 		div:nth-child(1) {
-			background-color: lightgrey;
+			background-color: g.$background-secondary;
+			border-radius: 8px;
 			padding: 0.25rem;
 		}
 	}

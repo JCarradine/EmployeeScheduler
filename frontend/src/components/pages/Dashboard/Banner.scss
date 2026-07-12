@@ -1,14 +1,14 @@
+@use "../../Global" as g;
+
 .banner-card {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 
-	border-style: solid;
-	border-color: darkgrey;
-	border-width: 2px;
-	border-radius: 8px;
+	border: g.$border;
+	border-radius: 16px;
 
-	background-color: white;
+	background-color: g.$background;
 
 	padding: 0.5rem;
 
@@ -22,23 +22,32 @@
 	}
 
 	.banner-button {
-		font-size: 2rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 0.25rem;
 
-		border-style: solid;
-		border-color: darkgrey;
-		border-width: 2px;
-		border-radius: 8px;
+		border: g.$border;
+		border-radius: 16px;
 
 		padding: 0.5rem;
 
-		width: 3rem;
+		background-color: g.$background;
+		color: g.$font-secondary-color;
 
-		background-color: white;
-		color: grey;
+		.banner-button-label,
+		.banner-button-icon {
+			font-size: 1.5rem;
+			color: g.$font-secondary-color;
+		}
 	}
 	.banner-button:hover {
-		color: white;
-		background-color: orange;
-		border-color: darkorange;
+		background-color: g.$background-accent;
+		border: g.$border-accent;
+
+		.banner-button-label,
+		.banner-button-icon {
+			color: g.$font-accent-color;
+		}
 	}
 }
