@@ -1,5 +1,9 @@
 import { Pencil } from "lucide-react";
+import { EXAMPLE_WORKERS, type WorkerRequests } from "./Types";
 import "../../Card.scss";
+
+const WORKER_REQUESTS: WorkerRequests[] =
+	EXAMPLE_WORKERS.find((Worker) => Worker.id === 1)?.requests ?? [];
 
 function Requests() {
 	return (
@@ -16,22 +20,26 @@ function Requests() {
 			{/*Avaiability Card List*/}
 			<div className="card-main">
 				<ul className="list">
-					<li className="list-item">
-						<div>Monday</div>
-						<div>01/11/2011</div>
-					</li>
-					<li className="list-item">
-						<div>Monday</div>
-						<div>01/11/2011</div>
-					</li>
-					<li className="list-item">
-						<div>Monday</div>
-						<div>01/11/2011</div>
-					</li>
-					<li className="list-item">
-						<div>Monday</div>
-						<div>01/11/2011</div>
-					</li>
+					{WORKER_REQUESTS.length > 0 &&
+						WORKER_REQUESTS.map((r) => (
+							<li className="list-item" key={r.id}>
+								<div>{r.reason}</div>
+
+								<div>
+									<div>
+										{r.startDate.getMonth() + 1}/{r.startDate.getDate() + 1}/
+										{r.startDate.getFullYear()}
+										{r.endDate && (
+											<>
+												{" - "}
+												{r.endDate.getMonth() + 1}/{r.endDate.getDate() + 1}/
+												{r.endDate.getFullYear()}
+											</>
+										)}
+									</div>
+								</div>
+							</li>
+						))}
 				</ul>
 			</div>
 		</div>

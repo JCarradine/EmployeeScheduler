@@ -26,22 +26,9 @@ export interface Workers {
 	role: "Manager" | "Decorator" | "ShiftLead" | "SalesAssociate";
 
 	availability: WorkerAvailability[];
-	requests?: Request[];
+	requests?: WorkerRequests[];
 }
 
-type Month =
-	| "January"
-	| "Febuary"
-	| "March"
-	| "April"
-	| "May"
-	| "June"
-	| "July"
-	| "August"
-	| "September"
-	| "October"
-	| "November"
-	| "December";
 type Day =
 	| "Sunday"
 	| "Monday"
@@ -77,6 +64,16 @@ export interface WorkerAvailability {
 	endHour?: Hour;
 	endMinute?: Minute;
 	endPeriod?: Meridium;
+}
+
+export interface WorkerRequests {
+	readonly id: number;
+	isOneDay: boolean;
+
+	reason: "Family" | "Vacation" | "Appointment" | "Sick";
+
+	startDate: Date; // should only be mm/dd/yyyy, no time
+	endDate?: Date; // should only be mm/dd/yyyy, no time
 }
 
 export const EXAMPLE_WORKERS: Workers[] = [
@@ -148,6 +145,15 @@ export const EXAMPLE_WORKERS: Workers[] = [
 			},
 			{ day: "Saturday", isAvailable: false },
 		],
+		requests: [
+			{
+				id: 101,
+				isOneDay: false,
+				reason: "Vacation",
+				startDate: new Date("2026-08-10"),
+				endDate: new Date("2026-08-14"),
+			},
+		],
 	},
 	{
 		id: 2,
@@ -208,6 +214,7 @@ export const EXAMPLE_WORKERS: Workers[] = [
 				endPeriod: "PM",
 			},
 		],
+		requests: [], // No active requests
 	},
 	{
 		id: 3,
@@ -277,6 +284,14 @@ export const EXAMPLE_WORKERS: Workers[] = [
 				endPeriod: "PM",
 			},
 		],
+		requests: [
+			{
+				id: 102,
+				isOneDay: true,
+				reason: "Appointment",
+				startDate: new Date("2026-07-21"),
+			},
+		],
 	},
 	{
 		id: 4,
@@ -309,6 +324,15 @@ export const EXAMPLE_WORKERS: Workers[] = [
 				endHour: "5",
 				endMinute: "00",
 				endPeriod: "PM",
+			},
+		],
+		requests: [
+			{
+				id: 103,
+				isOneDay: false,
+				reason: "Family",
+				startDate: new Date("2026-07-18"),
+				endDate: new Date("2026-07-19"),
 			},
 		],
 	},
@@ -380,6 +404,7 @@ export const EXAMPLE_WORKERS: Workers[] = [
 			},
 			{ day: "Saturday", isAvailable: false },
 		],
+		requests: [],
 	},
 	{
 		id: 6,
@@ -429,6 +454,14 @@ export const EXAMPLE_WORKERS: Workers[] = [
 				endHour: "10",
 				endMinute: "00",
 				endPeriod: "PM",
+			},
+		],
+		requests: [
+			{
+				id: 104,
+				isOneDay: true,
+				reason: "Sick",
+				startDate: new Date("2026-07-16"),
 			},
 		],
 	},
@@ -491,6 +524,7 @@ export const EXAMPLE_WORKERS: Workers[] = [
 			{ day: "Friday", isAvailable: false },
 			{ day: "Saturday", isAvailable: false },
 		],
+		requests: [],
 	},
 	{
 		id: 8,
@@ -542,6 +576,7 @@ export const EXAMPLE_WORKERS: Workers[] = [
 				endPeriod: "PM",
 			},
 		],
+		requests: [],
 	},
 	{
 		id: 9,
@@ -603,6 +638,15 @@ export const EXAMPLE_WORKERS: Workers[] = [
 			},
 			{ day: "Saturday", isAvailable: false },
 		],
+		requests: [
+			{
+				id: 105,
+				isOneDay: false,
+				reason: "Vacation",
+				startDate: new Date("2026-07-27"),
+				endDate: new Date("2026-07-31"),
+			},
+		],
 	},
 	{
 		id: 10,
@@ -663,5 +707,6 @@ export const EXAMPLE_WORKERS: Workers[] = [
 			},
 			{ day: "Saturday", isAvailable: false },
 		],
+		requests: [],
 	},
 ];
